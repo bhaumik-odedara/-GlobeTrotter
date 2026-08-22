@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Activity Search</title>
+
+    <link rel="stylesheet" href="../css/activity.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">TravelMate</div>
+
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="#">Trips</a>
+            <a href="activity.html" class="active">Activities</a>
+        </div>
+    </nav>
+
+
+    <!-- Page Header -->
+    <section class="page-header">
+
+        <h1>Find Things To Do</h1>
+
+        <p>
+            Discover amazing activities and experiences at your destination.
+        </p>
+
+    </section>
+
+
+    <!-- Main Container -->
+    <main class="container">
+
+        <!-- Search -->
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search activities..."
+            >
+
+            <button onclick="searchActivities()">
+                Search
+            </button>
+
+        </div>
+
+
+        <div class="content">
+
+            <!-- Filters -->
+            <aside class="filters">
+
+                <h2>Filters</h2>
+
+                <!-- Activity Type -->
+                <div class="filter-group">
+
+                    <h3>Type</h3>
+
+                    <label>
+                        <input type="checkbox" value="Sightseeing">
+                        Sightseeing
+                    </label>
+
+                    <label>
+                        <input type="checkbox" value="Food">
+                        Food
+                    </label>
+
+                    <label>
+                        <input type="checkbox" value="Adventure">
+                        Adventure
+                    </label>
+
+                    <label>
+                        <input type="checkbox" value="Culture">
+                        Culture
+                    </label>
+
+                </div>
+
+
+                <!-- Cost -->
+                <div class="filter-group">
+
+                    <h3>Cost</h3>
+
+                    <label>
+                        <input type="radio" name="cost" value="Free">
+                        Free
+                    </label>
+
+                    <label>
+                        <input type="radio" name="cost" value="Paid">
+                        Paid
+                    </label>
+
+                </div>
+
+
+                <!-- Duration -->
+                <div class="filter-group">
+
+                    <h3>Duration</h3>
+
+                    <select id="duration">
+
+                        <option value="all">Any Duration</option>
+
+                        <option value="short">
+                            Less than 2 hours
+                        </option>
+
+                        <option value="medium">
+                            2 - 4 hours
+                        </option>
+
+                        <option value="long">
+                            More than 4 hours
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <button class="clear-btn" onclick="clearFilters()">
+                    Clear Filters
+                </button>
+
+            </aside>
+
+
+            <!-- Activities -->
+            <section class="activities">
+
+                <div class="activity-heading">
+
+                    <h2>Popular Activities</h2>
+
+                    <span id="activityCount">
+                        6 Activities
+                    </span>
+
+                </div>
+
+
+                <div class="activity-grid" id="activityGrid">
+
+
+                    <!-- Activity Card 1 -->
+                    <div class="activity-card"
+                         data-type="Sightseeing"
+                         data-cost="Paid"
+                         data-duration="short">
+
+                        <img
+                            src="../images/activities/landmark.jpg"
+                            alt="City Landmark"
+                        >
+
+                        <div class="card-content">
+
+                            <span class="category">
+                                Sightseeing
+                            </span>
+
+                            <h3>City Landmark Tour</h3>
+
+                            <p>
+                                Explore the most famous landmarks
+                                and historical places of the city.
+                            </p>
+
+                            <div class="activity-info">
+
+                                <span>⏱ 1.5 Hours</span>
+
+                                <span>₹500</span>
+
+                            </div>
+
+                            <div class="card-buttons">
+
+                                <button
+                                    class="view-btn"
+                                    onclick="viewActivity('City Landmark Tour')">
+                                    Quick View
+                                </button>
+
+                                <button
+                                    class="add-btn"
+                                    onclick="addActivity(this)">
+                                    + Add
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Activity Card 2 -->
+                    <div class="activity-card"
+                         data-type="Food"
+                         data-cost="Paid"
+                         data-duration="medium">
+
+                        <img
+                            src="../images/activities/food-tour.jpg"
+                            alt="Food Tour"
+                        >
+
+                        <div class="card-content">
+
+                            <span class="category">
+                                Food
+                            </span>
+
+                            <h3>Local Food Tour</h3>
+
+                            <p>
+                                Taste authentic local dishes
+                                and discover hidden food spots.
+                            </p>
+
+                            <div class="activity-info">
+
+                                <span>⏱ 3 Hours</span>
+
+                                <span>₹1200</span>
+
+                            </div>
+
+                            <div class="card-buttons">
+
+                                <button
+                                    class="view-btn"
+                                    onclick="viewActivity('Local Food Tour')">
+                                    Quick View
+                                </button>
+
+                                <button
+                                    class="add-btn"
+                                    onclick="addActivity(this)">
+                                    + Add
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Activity Card 3 -->
+                    <div class="activity-card"
+                         data-type="Adventure"
+                         data-cost="Paid"
+                         data-duration="long">
+
+                        <img
+                            src="../images/activities/trekking.jpg"
+                            alt="Trekking"
+                        >
+
+                        <div class="card-content">
+
+                            <span class="category">
+                                Adventure
+                            </span>
+
+                            <h3>Mountain Trekking</h3>
+
+                            <p>
+                                Enjoy an exciting trekking experience
+                                with beautiful mountain views.
+                            </p>
+
+                            <div class="activity-info">
+
+                                <span>⏱ 5 Hours</span>
+
+                                <span>₹1800</span>
+
+                            </div>
+
+                            <div class="card-buttons">
+
+                                <button
+                                    class="view-btn"
+                                    onclick="viewActivity('Mountain Trekking')">
+                                    Quick View
+                                </button>
+
+                                <button
+                                    class="add-btn"
+                                    onclick="addActivity(this)">
+                                    + Add
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Activity Card 4 -->
+                    <div class="activity-card"
+                         data-type="Culture"
+                         data-cost="Free"
+                         data-duration="short">
+
+                        <img
+                            src="../images/activities/museum.jpg"
+                            alt="Museum"
+                        >
+
+                        <div class="card-content">
+
+                            <span class="category">
+                                Culture
+                            </span>
+
+                            <h3>Historical Museum</h3>
+
+                            <p>
+                                Learn about the history and culture
+                                of the destination.
+                            </p>
+
+                            <div class="activity-info">
+
+                                <span>⏱ 1 Hour</span>
+
+                                <span>Free</span>
+
+                            </div>
+
+                            <div class="card-buttons">
+
+                                <button
+                                    class="view-btn"
+                                    onclick="viewActivity('Historical Museum')">
+                                    Quick View
+                                </button>
+
+                                <button
+                                    class="add-btn"
+                                    onclick="addActivity(this)">
+                                    + Add
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Activity Card 5 -->
+                    <div class="activity-card"
+                         data-type="Sightseeing"
+                         data-cost="Free"
+                         data-duration="medium">
+
+                        <img
+                            src="../images/activities/park.jpg"
+                            alt="City Park"
+                        >
+
+                        <div class="card-content">
+
+                            <span class="category">
+                                Sightseeing
+                            </span>
+
+                            <h3>City Park Walk</h3>
+
+                            <p>
+                                Relax and enjoy a peaceful walk
+                                through the beautiful city park.
+                            </p>
+
+                            <div class="activity-info">
+
+                                <span>⏱ 2.5 Hours</span>
+
+                                <span>Free</span>
+
+                            </div>
+
+                            <div class="card-buttons">
+
+                                <button
+                                    class="view-btn"
+                                    onclick="viewActivity('City Park Walk')">
+                                    Quick View
+                                </button>
+
+                                <button
+                                    class="add-btn"
+                                    onclick="addActivity(this)">
+                                    + Add
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Activity Card 6 -->
+                    <div class="activity-card"
+                         data-type="Food"
+                         data-cost="Paid"
+                         data-duration="short">
+
+                        <img
+                            src="../images/activities/cooking.jpg"
+                            alt="Cooking Class"
+                        >
+
+                        <div class="card-content">
+
+                            <span class="category">
+                                Food
+                            </span>
+
+                            <h3>Cooking Class</h3>
+
+                            <p>
+                                Learn how to prepare traditional
+                                local dishes from expert chefs.
+                            </p>
+
+                            <div class="activity-info">
+
+                                <span>⏱ 1.5 Hours</span>
+
+                                <span>₹800</span>
+
+                            </div>
+
+                            <div class="card-buttons">
+
+                                <button
+                                    class="view-btn"
+                                    onclick="viewActivity('Cooking Class')">
+                                    Quick View
+                                </button>
+
+                                <button
+                                    class="add-btn"
+                                    onclick="addActivity(this)">
+                                    + Add
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <script src="../js/activity.js"></script>
+
+</body>
+</html>

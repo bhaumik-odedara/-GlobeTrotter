@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Activity Details</title>
+
+    <link rel="stylesheet"
+          href="../css/activity.css">
+
+</head>
+
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            TravelMate
+        </div>
+
+        <div class="nav-links">
+
+            <a href="../index.html">
+                Home
+            </a>
+
+            <a href="activity.html">
+                Activities
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Details -->
+
+    <main class="details-container">
+
+        <a href="activity.html"
+           class="back-btn">
+            ← Back to Activities
+        </a>
+
+
+        <div class="details-card">
+
+            <!-- Image -->
+
+            <div class="details-image">
+
+                <img
+                    src="../images/activities/landmark.jpg"
+                    alt="City Landmark"
+                >
+
+            </div>
+
+
+            <!-- Information -->
+
+            <div class="details-content">
+
+                <span class="category">
+                    Sightseeing
+                </span>
+
+                <h1>
+                    City Landmark Tour
+                </h1>
+
+                <p class="description">
+
+                    Explore the most famous landmarks and
+                    historical places of the city with a
+                    local guide.
+
+                    This activity is perfect for travelers
+                    who want to understand the history,
+                    culture and beauty of the destination.
+
+                </p>
+
+
+                <!-- Activity Information -->
+
+                <div class="details-info">
+
+                    <div>
+                        <strong>Duration</strong>
+                        <span>1.5 Hours</span>
+                    </div>
+
+                    <div>
+                        <strong>Cost</strong>
+                        <span>₹500 / Person</span>
+                    </div>
+
+                    <div>
+                        <strong>Type</strong>
+                        <span>Sightseeing</span>
+                    </div>
+
+                </div>
+
+
+                <!-- Highlights -->
+
+                <h2>
+                    Highlights
+                </h2>
+
+                <ul class="highlights">
+
+                    <li>
+                        Visit famous city landmarks
+                    </li>
+
+                    <li>
+                        Learn about local history
+                    </li>
+
+                    <li>
+                        Guided walking tour
+                    </li>
+
+                    <li>
+                        Photography opportunities
+                    </li>
+
+                </ul>
+
+
+                <!-- Buttons -->
+
+                <div class="details-buttons">
+
+                    <button
+                        class="add-btn"
+                        onclick="addActivity(this)">
+                        + Add to Trip
+                    </button>
+
+                    <button
+                        class="remove-btn"
+                        onclick="removeActivity(this)">
+                        Remove
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="../js/activity.js"></script>
+
+</body>
+
+</html>
